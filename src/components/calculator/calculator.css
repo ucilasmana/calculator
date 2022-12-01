@@ -36,7 +36,7 @@
 }
 .calculator-buttons .actions{
     position: absolute;
-    bottom: -11px;
+    bottom: -12px;
 }
 .calculator-buttons .actions button {
     font-family: var(--font-inconsolata);
@@ -71,7 +71,7 @@
     float: right;
     cursor: pointer;
     text-shadow: 1.5px 1.5px rgb(112, 154, 155);
-    background-color: rgba(35, 148, 182, 0.418);;
+    background-color: rgba(35, 148, 182, 0.418);
 }
 @media only screen and (max-width: 700px) {
     .calculator-screen{

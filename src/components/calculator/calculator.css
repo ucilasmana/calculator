@@ -1,0 +1,97 @@
+.calculator-screen{
+    position:relative;
+    width: 85%;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: inset 5px 4px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 20px #fff;
+    overflow-y: auto;
+    overflow-wrap:break-word;
+    font-family: var(--font-inconsolata);
+    font-weight: 600;
+    font-size: 2.4em;
+    text-align: end;
+    user-select: none;
+}
+.calculator-buttons{
+    margin: 40px 0 10px 0;
+    display: flex;
+    justify-content: center;
+}
+.numbers-operators{
+   display: inherit;
+    justify-content:center;
+    flex-wrap: wrap;
+}
+
+.calculator-buttons button{
+    min-width: 50px;
+    padding: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 20px #fff;
+    margin:10px;    
+    font-size: 1.3em;
+    color: var(--dark-blue-color);
+    font-family: var(--font-fredoka);
+    border: 2px solid #edf1f4;
+    border-radius:8px;
+}
+.calculator-buttons .actions{
+    position: absolute;
+    bottom: -11px;
+}
+.calculator-buttons .actions button {
+    font-family: var(--font-inconsolata);
+    color: white;
+    border: none;
+    box-shadow: none;
+    border-radius:10px 10px 0 0;   
+}
+.calculator-buttons #green {
+     background-color: var( --green-color);
+     padding: 10px 15px;
+}
+.calculator-buttons #red{
+    background-color: var( --red-color);
+}
+.calculator-buttons #yellow
+{
+    background-color: var( --yellow-color);
+}
+.calculator-buttons #blue
+{
+    background-color: var(--dark-blue-color);
+}
+#close-history{
+    padding: 10px;
+    border-bottom-left-radius: 20px;
+    display: block;
+    font-family: var(--font-fredoka);
+    font-weight: 400;
+    margin-right: -3px;
+    font-size: 1.5em;
+    float: right;
+    cursor: pointer;
+    text-shadow: 1.5px 1.5px rgb(112, 154, 155);
+    background-color: rgba(35, 148, 182, 0.418);;
+}
+@media only screen and (max-width: 700px) {
+    .calculator-screen{
+        font-size: 2em;
+        padding: 20px;
+    }  
+    .calculator-buttons button{
+        font-size: 1.2em;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .calculator-screen{
+        font-size: 1.8em;
+        padding: 15px;
+        border-radius: 5px;
+    }  
+    .calculator-buttons button{
+        font-size: 0.9em;
+        min-width: 30px;
+        border-radius:5px;
+    }
+  }
+ 

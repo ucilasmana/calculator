@@ -14,6 +14,35 @@ const Calculator = () => {
     const numbers_operators=[1, 2, 3, 4, 5, 6, 7, 8, 9, 0, '.', '(', ')', '+', '-', 'x', '%','/'];
     const actions=['=', 'Delete','Clear', 'History']
     
+    useEffect(() => {
+        const changeButtonView = () => {
+            if(window.innerWidth<340)
+            {
+                document.getElementById("blue").innerText = 'H'
+                document.getElementById("blue").style.padding = '10px 15px';
+                document.getElementById("yellow").innerHTML = 'C '
+                document.getElementById("yellow").style.padding = '10px 15px';
+                document.getElementById("red").innerHTML = 'D'
+                document.getElementById("red").style.padding = '10px 15px';
+            }
+            else{
+                document.getElementById("blue").innerText = 'History'
+                document.getElementById("blue").style.padding = '10px';
+                document.getElementById("yellow").innerHTML = 'Clear '
+                document.getElementById("yellow").style.padding = '10px';
+                document.getElementById("red").innerHTML = 'Delete'
+                document.getElementById("red").style.padding = '10px';
+            }
+        }
+
+        window.addEventListener("resize",changeButtonView);
+
+        return () => {
+            window.removeEventListener("resize",changeButtonView)
+          }
+
+
+    }, [])
    
     useEffect(() => {
 
@@ -28,30 +57,10 @@ const Calculator = () => {
         else{
             document.getElementById("calculator-history").style.display = 'none'
         }
-        window.addEventListener("resize",changeButtonView);
-    
-       
+
     }, [result, overlay])
 
-    const changeButtonView = () => {
-        if(window.innerWidth<340)
-        {
-            document.getElementById("blue").innerText = 'H'
-            document.getElementById("blue").style.padding = '10px 15px';
-            document.getElementById("yellow").innerHTML = 'C '
-            document.getElementById("yellow").style.padding = '10px 15px';
-            document.getElementById("red").innerHTML = 'D'
-            document.getElementById("red").style.padding = '10px 15px';
-        }
-        else{
-            document.getElementById("blue").innerText = 'History'
-            document.getElementById("blue").style.padding = '10px';
-            document.getElementById("yellow").innerHTML = 'Clear '
-            document.getElementById("yellow").style.padding = '10px';
-            document.getElementById("red").innerHTML = 'Delete'
-            document.getElementById("red").style.padding = '10px';
-        }
-    }
+    
 
     const calculate = (value) => {
 
